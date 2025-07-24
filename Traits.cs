@@ -41,99 +41,99 @@ namespace Tellann
         public static string debugBase = "Binbin - Testing " + heroName + " ";
 
 
-        // public static void DoCustomTrait(string _trait, ref Trait __instance)
-        // {
-        //     // get info you may need
-        //     Enums.EventActivation _theEvent = Traverse.Create(__instance).Field("theEvent").GetValue<Enums.EventActivation>();
-        //     Character _character = Traverse.Create(__instance).Field("character").GetValue<Character>();
-        //     Character _target = Traverse.Create(__instance).Field("target").GetValue<Character>();
-        //     int _auxInt = Traverse.Create(__instance).Field("auxInt").GetValue<int>();
-        //     string _auxString = Traverse.Create(__instance).Field("auxString").GetValue<string>();
-        //     CardData _castedCard = Traverse.Create(__instance).Field("castedCard").GetValue<CardData>();
-        //     Traverse.Create(__instance).Field("character").SetValue(_character);
-        //     Traverse.Create(__instance).Field("target").SetValue(_target);
-        //     Traverse.Create(__instance).Field("theEvent").SetValue(_theEvent);
-        //     Traverse.Create(__instance).Field("auxInt").SetValue(_auxInt);
-        //     Traverse.Create(__instance).Field("auxString").SetValue(_auxString);
-        //     Traverse.Create(__instance).Field("castedCard").SetValue(_castedCard);
-        //     TraitData traitData = Globals.Instance.GetTraitData(_trait);
-        //     List<CardData> cardDataList = [];
-        //     List<string> heroHand = MatchManager.Instance.GetHeroHand(_character.HeroIndex);
-        //     Hero[] teamHero = MatchManager.Instance.GetTeamHero();
-        //     NPC[] teamNpc = MatchManager.Instance.GetTeamNPC();
+        public static void DoCustomTrait(string _trait, ref Trait __instance)
+        {
+            // get info you may need
+            Enums.EventActivation _theEvent = Traverse.Create(__instance).Field("theEvent").GetValue<Enums.EventActivation>();
+            Character _character = Traverse.Create(__instance).Field("character").GetValue<Character>();
+            Character _target = Traverse.Create(__instance).Field("target").GetValue<Character>();
+            int _auxInt = Traverse.Create(__instance).Field("auxInt").GetValue<int>();
+            string _auxString = Traverse.Create(__instance).Field("auxString").GetValue<string>();
+            CardData _castedCard = Traverse.Create(__instance).Field("castedCard").GetValue<CardData>();
+            Traverse.Create(__instance).Field("character").SetValue(_character);
+            Traverse.Create(__instance).Field("target").SetValue(_target);
+            Traverse.Create(__instance).Field("theEvent").SetValue(_theEvent);
+            Traverse.Create(__instance).Field("auxInt").SetValue(_auxInt);
+            Traverse.Create(__instance).Field("auxString").SetValue(_auxString);
+            Traverse.Create(__instance).Field("castedCard").SetValue(_castedCard);
+            TraitData traitData = Globals.Instance.GetTraitData(_trait);
+            List<CardData> cardDataList = [];
+            List<string> heroHand = MatchManager.Instance.GetHeroHand(_character.HeroIndex);
+            Hero[] teamHero = MatchManager.Instance.GetTeamHero();
+            NPC[] teamNpc = MatchManager.Instance.GetTeamNPC();
 
-        //     if (!IsLivingHero(_character))
-        //     {
-        //         return;
-        //     }
-        //     string traitName = traitData.TraitName;
-        //     string traitId = _trait;
-
-
-        //     if (_trait == trait0)
-        //     {
-        //         // Zeal on heroes increases healing received by 20% per charge. Whenever a hero gains Zeal, they gain 1 Vitality.
-
-        //     }
+            if (!IsLivingHero(_character))
+            {
+                return;
+            }
+            string traitName = traitData.TraitName;
+            string traitId = _trait;
 
 
-        //     else if (_trait == trait2a)
-        //     {
-        //         // trait2a
-        //         // When you play a Healing Spell that costs energy, 
-        //         // refund one and give the lowest hp hero 1 Zeal and 5 Burn. (3 times/turn)
+            if (_trait == trait0)
+            {
+                // Zeal on heroes increases healing received by 20% per charge. Whenever a hero gains Zeal, they gain 1 Vitality.
 
-        //         if (CanIncrementTraitActivations(traitId) && _castedCard.HasCardType(Enums.CardType.Healing_Spell) && MatchManager.Instance.energyJustWastedByHero > 0)
-        //         {
-        //             LogDebug($"Handling Trait {traitId}: {traitName}");
-        //             _character?.ModifyEnergy(1);
-        //             Character lowestHpHero = GetLowestHPCharacter(teamHero);
-        //             if (lowestHpHero != null)
-        //             {
-        //                 lowestHpHero.SetAuraTrait(lowestHpHero, "zeal", 1);
-        //                 lowestHpHero.SetAuraTrait(lowestHpHero, "burn", 5);
-        //             }
-        //             IncrementTraitActivations(traitId);
-        //         }
-        //     }
+            }
 
 
+            else if (_trait == trait2a)
+            {
+                // trait2a
+                // When you play a Healing Spell that costs energy, 
+                // refund one and give the lowest hp hero 1 Zeal and 5 Burn. (3 times/turn)
 
-        //     else if (_trait == trait2b)
-        //     {
-        //         // trait2b:
-        //         // Burn +1, Dark +1. 
-        //         // Burn on you increases Shadow Resistance by 0.5% per charge. 
-        //         // Dark on you enemies increases Fire Damage received by 1 per charge.
+                if (CanIncrementTraitActivations(traitId) && _castedCard.HasCardType(Enums.CardType.Healing_Spell) && MatchManager.Instance.energyJustWastedByHero > 0)
+                {
+                    LogDebug($"Handling Trait {traitId}: {traitName}");
+                    _character?.ModifyEnergy(1);
+                    Character lowestHpHero = GetLowestHPCharacter(teamHero);
+                    if (lowestHpHero != null)
+                    {
+                        lowestHpHero.SetAuraTrait(lowestHpHero, "zeal", 1);
+                        lowestHpHero.SetAuraTrait(lowestHpHero, "burn", 5);
+                    }
+                    IncrementTraitActivations(traitId);
+                }
+            }
 
-        //         LogDebug($"Handling Trait {traitId}: {traitName}");
 
-        //     }
 
-        //     else if (_trait == trait4a)
-        //     {
-        //         // trait 4a;
-        //         // Burn +2, Dark +2. When Dark explodes, Heal all heroes for 20% of the Dark stacks, 
-        //         // and apply 1 Zeal and 5 Burn to all heroes. These effects do not benefit from modifiers.
+            else if (_trait == trait2b)
+            {
+                // trait2b:
+                // Burn +1, Dark +1. 
+                // Burn on you increases Shadow Resistance by 0.5% per charge. 
+                // Dark on you enemies increases Fire Damage received by 1 per charge.
 
-        //         LogDebug($"Handling Trait {traitId}: {traitName}");
-        //     }
+                LogDebug($"Handling Trait {traitId}: {traitName}");
 
-        //     else if (_trait == trait4b)
-        //     {
-        //         // trait 4b:
-        //         // At the start of your turn, reduce the cost of your highest cost card by one for every 30 Burn on you.
-        //         LogDebug($"Handling Trait {traitId}: {traitName}");
-        //         CardData highestCostCard = GetRandomHighestCostCard(Enums.CardType.None, heroHand);
-        //         if (highestCostCard != null)
-        //         {
-        //             int burnCharges = _character.GetAuraCharges("burn");
-        //             int costReduction = burnCharges / 30;
-        //             ReduceCardCost(ref highestCostCard, amountToReduce: costReduction);
-        //         }
-        //     }
+            }
 
-        // }
+            else if (_trait == trait4a)
+            {
+                // trait 4a;
+                // Burn +2, Dark +2. When Dark explodes, Heal all heroes for 20% of the Dark stacks, 
+                // and apply 1 Zeal and 5 Burn to all heroes. These effects do not benefit from modifiers.
+
+                LogDebug($"Handling Trait {traitId}: {traitName}");
+            }
+
+            else if (_trait == trait4b)
+            {
+                // trait 4b:
+                // At the start of your turn, reduce the cost of your highest cost card by one for every 30 Burn on you.
+                LogDebug($"Handling Trait {traitId}: {traitName}");
+                CardData highestCostCard = GetRandomHighestCostCard(Enums.CardType.None, heroHand);
+                if (highestCostCard != null)
+                {
+                    int burnCharges = _character.GetAuraCharges("burn");
+                    int costReduction = burnCharges / 30;
+                    ReduceCardCost(ref highestCostCard, amountToReduce: costReduction);
+                }
+            }
+
+        }
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(Trait), "DoTrait")]
@@ -157,99 +157,99 @@ namespace Tellann
 
 
 
-        // [HarmonyPostfix]
-        // [HarmonyPatch(typeof(AtOManager), "GlobalAuraCurseModificationByTraitsAndItems")]
-        // // [HarmonyPriority(Priority.Last)]
-        // public static void GlobalAuraCurseModificationByTraitsAndItemsPostfix(ref AtOManager __instance, ref AuraCurseData __result, string _type, string _acId, Character _characterCaster, Character _characterTarget)
-        // {
-        //     // LogInfo($"GACM {subclassName}");
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(AtOManager), "GlobalAuraCurseModificationByTraitsAndItems")]
+        // [HarmonyPriority(Priority.Last)]
+        public static void GlobalAuraCurseModificationByTraitsAndItemsPostfix(ref AtOManager __instance, ref AuraCurseData __result, string _type, string _acId, Character _characterCaster, Character _characterTarget)
+        {
+            // LogInfo($"GACM {subclassName}");
 
-        //     Character characterOfInterest = _type == "set" ? _characterTarget : _characterCaster;
-        //     string traitOfInterest;
-        //     switch (_acId)
-        //     {
-        //         // trait0:
-        //         // Zeal on heroes increases healing received by 20% per charge. Whenever a hero gains Zeal, they gain 1 Vitality.
+            Character characterOfInterest = _type == "set" ? _characterTarget : _characterCaster;
+            string traitOfInterest;
+            switch (_acId)
+            {
+                // trait0:
+                // Zeal on heroes increases healing received by 20% per charge. Whenever a hero gains Zeal, they gain 1 Vitality.
 
-        //         // trait2b:
-        //         // Burn on you increases Shadow Resistance by 0.5% per charge. Dark on you enemies increases Fire Damage received by 1 per charge.
+                // trait2b:
+                // Burn on you increases Shadow Resistance by 0.5% per charge. Dark on you enemies increases Fire Damage received by 1 per charge.
 
-        //         // trait 4b:
-        //         // Burn on allies no longer reduces resistances. At the start of your turn, reduce the cost of your highest cost card by one for every 30 Burn on you.
+                // trait 4b:
+                // Burn on allies no longer reduces resistances. At the start of your turn, reduce the cost of your highest cost card by one for every 30 Burn on you.
 
-        //         case "zeal":
-        //             traitOfInterest = trait0;
-        //             if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.Heroes))
-        //             {
-        //                 __result.HealReceivedPercentPerStack = 20;
-        //             }
-        //             break;
-        //         case "burn":
-        //             traitOfInterest = trait2b;
-        //             if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.ThisHero))
-        //             {
-        //                 __result = AtOManager.Instance.GlobalAuraCurseModifyResist(__result, Enums.DamageType.Shadow, 0, 0.5f); ;
-        //             }
-        //             traitOfInterest = trait4b;
-        //             if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.Heroes))
-        //             {
-        //                 __result.ResistModified = __result.ResistModified2 = __result.ResistModified3 = Enums.DamageType.None;
-        //                 __result.ResistModifiedPercentagePerStack = __result.ResistModifiedPercentagePerStack2 = __result.ResistModifiedPercentagePerStack3 = 0;
-        //             }
-        //             break;
-        //         case "dark":
-        //             traitOfInterest = trait2b;
-        //             if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.Monsters))
-        //             {
-        //                 __result.IncreasedDamageReceivedType = Enums.DamageType.Fire;
-        //                 __result.IncreasedDirectDamageReceivedPerStack = 1;
-        //             }
-        //             break;
-        //     }
-        // }
+                case "zeal":
+                    traitOfInterest = trait0;
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.Heroes))
+                    {
+                        __result.HealReceivedPercentPerStack = 20;
+                    }
+                    break;
+                case "burn":
+                    traitOfInterest = trait2b;
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.ThisHero))
+                    {
+                        __result = AtOManager.Instance.GlobalAuraCurseModifyResist(__result, Enums.DamageType.Shadow, 0, 0.5f); ;
+                    }
+                    traitOfInterest = trait4b;
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.Heroes))
+                    {
+                        __result.ResistModified = __result.ResistModified2 = __result.ResistModified3 = Enums.DamageType.None;
+                        __result.ResistModifiedPercentagePerStack = __result.ResistModifiedPercentagePerStack2 = __result.ResistModifiedPercentagePerStack3 = 0;
+                    }
+                    break;
+                case "dark":
+                    traitOfInterest = trait2b;
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.Monsters))
+                    {
+                        __result.IncreasedDamageReceivedType = Enums.DamageType.Fire;
+                        __result.IncreasedDirectDamageReceivedPerStack = 1;
+                    }
+                    break;
+            }
+        }
 
-        // [HarmonyPostfix]
-        // [HarmonyPatch(typeof(Character), nameof(Character.SetEvent))]
-        // public static void SetEventPostfix(
-        //     Character __instance,
-        //     Enums.EventActivation theEvent,
-        //     Character target = null,
-        //     int auxInt = 0,
-        //     string auxString = "")
-        // {
-        //     //Whenever a hero gains Zeal, they gain 1 Vitality.
-        //     if (theEvent == Enums.EventActivation.AuraCurseSet && auxString == "zeal" && IsLivingHero(__instance) && AtOManager.Instance.TeamHaveTrait(trait0))
-        //     {
-        //         __instance.SetAuraTrait(__instance, "vitality", 1);
-        //     }
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Character), nameof(Character.SetEvent))]
+        public static void SetEventPostfix(
+            Character __instance,
+            Enums.EventActivation theEvent,
+            Character target = null,
+            int auxInt = 0,
+            string auxString = "")
+        {
+            //Whenever a hero gains Zeal, they gain 1 Vitality.
+            if (theEvent == Enums.EventActivation.AuraCurseSet && auxString == "zeal" && IsLivingHero(__instance) && AtOManager.Instance.TeamHaveTrait(trait0))
+            {
+                __instance.SetAuraTrait(__instance, "vitality", 1);
+            }
 
-        //     // When Dark explodes, Heal all heroes for 20% of the Dark stacks, and apply 1 Zeal and 5 Burn to all heroes. These effects do not benefit from modifiers.
+            // When Dark explodes, Heal all heroes for 20% of the Dark stacks, and apply 1 Zeal and 5 Burn to all heroes. These effects do not benefit from modifiers.
 
-        //     if (theEvent == Enums.EventActivation.AuraCurseSet && auxString == "dark" && __instance.Alive && __instance != null && AtOManager.Instance.TeamHaveTrait(trait4a))
-        //     {
-        //         int nCharges = __instance.GetAuraCharges("dark") + auxInt;
-        //         bool ACExplodes = nCharges >= GetAuraCurseData(auxString).ExplodeAtStacks; // Assuming 10 is the threshold for explosion
-        //         if (ACExplodes)
-        //         {
-        //             LogDebug($"Dark Explodes on {__instance.Id} with {__instance.GetAuraCharges("dark")} + {auxInt} charges.");
-        //             // Heal all heroes for 20% of the Dark stacks
-        //             int healAmount = Mathf.RoundToInt(nCharges * 0.2f);
-        //             Hero[] teamHeroes = MatchManager.Instance.GetTeamHero();
-        //             for (int i = 0; i < teamHeroes.Length; i++)
-        //             {
-        //                 Hero hero = teamHeroes[i];
-        //                 if (IsLivingHero(hero))
-        //                 {
-        //                     TraitHeal(ref __instance, hero, healAmount, "");
-        //                     hero.SetAuraTrait(hero, "zeal", 1);
-        //                     hero.SetAuraTrait(hero, "burn", 5);
-        //                 }
-        //             }
+            if (theEvent == Enums.EventActivation.AuraCurseSet && auxString == "dark" && __instance.Alive && __instance != null && AtOManager.Instance.TeamHaveTrait(trait4a))
+            {
+                int nCharges = __instance.GetAuraCharges("dark") + auxInt;
+                bool ACExplodes = nCharges >= GetAuraCurseData(auxString).ExplodeAtStacks; // Assuming 10 is the threshold for explosion
+                if (ACExplodes)
+                {
+                    LogDebug($"Dark Explodes on {__instance.Id} with {__instance.GetAuraCharges("dark")} + {auxInt} charges.");
+                    // Heal all heroes for 20% of the Dark stacks
+                    int healAmount = Mathf.RoundToInt(nCharges * 0.2f);
+                    Hero[] teamHeroes = MatchManager.Instance.GetTeamHero();
+                    for (int i = 0; i < teamHeroes.Length; i++)
+                    {
+                        Hero hero = teamHeroes[i];
+                        if (IsLivingHero(hero))
+                        {
+                            TraitHeal(ref __instance, hero, healAmount, "");
+                            hero.SetAuraTrait(hero, "zeal", 1);
+                            hero.SetAuraTrait(hero, "burn", 5);
+                        }
+                    }
 
-        //         }
+                }
 
-        //     }
-        // }
+            }
+        }
 
 
 
