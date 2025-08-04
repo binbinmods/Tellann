@@ -1,0 +1,15 @@
+{
+    "Card0": "exaltedmartyr",
+    "Card1": "innerfire",
+    "Card2": "innercombustion",
+    "Card3": "bbbdarkbrand",
+    "Card4": "shadowflame",
+    "Card5": "",
+    "CardSpecial0": "",
+    "CardSpecial1": "",
+    "PackClass": "mage",
+    "PackID": "tellann",
+    "PackName": "Tellann",
+    "PerkList": [],
+    "RequiredClass": "exalted"
+}
