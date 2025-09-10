@@ -23,7 +23,7 @@
     "DamageBonusPercentValue": 0.0,
     "DamageBonusPercentValue2": 0.0,
     "DamageBonusPercentValue3": 0.0,
-    "Description": "Zeal on heroes increases healing received by 20% per charge. Whenever a hero gains Zeal, they gain 1 Vitality.",
+    "Description": "You cannot play Books. When you apply Burn, apply 1 Zeal",
     "HealFlatBonus": 0,
     "HealPercentBonus": 0.0,
     "HealReceivedFlatBonus": 0,
@@ -39,5 +39,5 @@
     "TimesPerTurn": 0,
     "TraitCard": "",
     "TraitCardForAllHeroes": "",
-    "TraitName": "Guiding Flame"
+    "TraitName": "Faith"
 }

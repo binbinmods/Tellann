@@ -1,5 +1,5 @@
 {
-    "Activation": "",
+    "Activation": "None",
     "AuraCurseBonus1": "",
     "AuraCurseBonus2": "",
     "AuraCurseBonus3": "",
@@ -23,7 +23,7 @@
     "DamageBonusPercentValue": 0.0,
     "DamageBonusPercentValue2": 0.0,
     "DamageBonusPercentValue3": 0.0,
-    "Description": "Burn +1, Dark +1. Burn on you increases Shadow Resistance by 0.5% per charge. Dark on you enemies increases Fire Damage received by 1 per charge.",
+    "Description": "Burn on you increases Shadow Damage by 0.5 per charge. Dark on enemies increases Fire Damage received by 1 per charge.",
     "HealFlatBonus": 0,
     "HealPercentBonus": 0.0,
     "HealReceivedFlatBonus": 0,

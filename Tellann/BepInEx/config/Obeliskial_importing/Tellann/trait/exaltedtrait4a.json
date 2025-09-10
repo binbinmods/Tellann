@@ -1,5 +1,5 @@
 {
-    "Activation": "",
+    "Activation": "None",
     "AuraCurseBonus1": "",
     "AuraCurseBonus2": "",
     "AuraCurseBonus3": "",
@@ -23,7 +23,7 @@
     "DamageBonusPercentValue": 0.0,
     "DamageBonusPercentValue2": 0.0,
     "DamageBonusPercentValue3": 0.0,
-    "Description": "Burn +2, Dark +2. When Dark explodes, Heal all heroes for 20% of the Dark stacks, and apply 1 Zeal and 5 Burn to all heroes. These effects do not benefit from modifiers.",
+    "Description": "Burn +2, Dark +2. When a hero hits a monster with Dark, they heal 1 HP per charge.",
     "HealFlatBonus": 0,
     "HealPercentBonus": 0.0,
     "HealReceivedFlatBonus": 0,

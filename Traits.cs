@@ -178,11 +178,11 @@ namespace Tellann
                 // Burn on allies no longer reduces resistances. At the start of your turn, reduce the cost of your highest cost card by one for every 30 Burn on you.
 
                 case "zeal":
-                    traitOfInterest = trait0;
-                    if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.Heroes))
-                    {
-                        __result.HealReceivedPercentPerStack = 20;
-                    }
+                    // traitOfInterest = trait0;
+                    // if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.Heroes))
+                    // {
+                    //     __result.HealReceivedPercentPerStack = 20;
+                    // }
                     break;
                 case "burn":
                     traitOfInterest = trait2b;
@@ -217,10 +217,11 @@ namespace Tellann
             int auxInt = 0,
             string auxString = "")
         {
-            //Whenever a hero gains Zeal, they gain 1 Vitality.
+            //Whenever a hero gains Zeal, they apply 1 Vitality and 3 Burn to themselves.
             if (theEvent == Enums.EventActivation.AuraCurseSet && auxString == "zeal" && IsLivingHero(__instance) && AtOManager.Instance.TeamHaveTrait(trait0))
             {
                 __instance.SetAuraTrait(__instance, "vitality", 1);
+                __instance.SetAuraTrait(__instance, "burn", 3);
             }
 
             // When Dark explodes, Heal all heroes for 20% of the Dark stacks, and apply 1 Zeal and 5 Burn to all heroes. These effects do not benefit from modifiers.
@@ -281,6 +282,20 @@ namespace Tellann
         //     }
 
         // }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Character), nameof(Character.CanPlayCard))]
+        public static void CanPlayCardPostfix(
+            Character __instance,
+            ref bool __result,
+            CardData cardData)
+        {
+            // trait0 - You cannot play Books.
+            if (IsLivingHero(__instance) && __instance.HaveTrait(trait0) && cardData.HasCardType(Enums.CardType.Book))
+            {
+                __result = false;
+            }
+        }
 
 
 
