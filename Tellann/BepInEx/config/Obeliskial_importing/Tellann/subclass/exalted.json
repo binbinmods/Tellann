@@ -4,9 +4,9 @@
     "Cards": [
         "{\n    \"UnitsInDeck\": 3,\n    \"Card\": \"innerfire\"\n}",
         "{\n    \"UnitsInDeck\": 3,\n    \"Card\": \"innercombustion\"\n}",
-        "{\n    \"UnitsInDeck\": 2,\n    \"Card\": \"shadowbolt\"\n}",
-        "{\n    \"UnitsInDeck\": 2,\n    \"Card\": \"ignite\"\n}",
-        "{\n    \"UnitsInDeck\": 2,\n    \"Card\": \"bbbdarkbrand\"\n}",
+        "{\n    \"UnitsInDeck\": 3,\n    \"Card\": \"bbbblackbrand\"\n}",
+        "{\n    \"UnitsInDeck\": 2,\n    \"Card\": \"cauterize\"\n}",
+        "{\n    \"UnitsInDeck\": 1,\n    \"Card\": \"prayerofhealing\"\n}",
         "{\n    \"UnitsInDeck\": 2,\n    \"Card\": \"shadowflame\"\n}",
         "{\n    \"UnitsInDeck\": 1,\n    \"Card\": \"exaltedmartyr\"\n}"
     ],
@@ -72,15 +72,15 @@
         "innercombustion",
         "shadowbolt",
         "ignite",
-        "bbbdarkbrand",
+        "bbbblackbrand",
         "shadowflame",
-        "preservation",
+        "perseverance",
         "curseofdecay",
         "searingnova",
         "searingtouch",
         "fireblast",
-        "curseoffragility",
-        "curseofexhaustion",
-        "pestilence"
+        "flashheal",
+        "heal",
+        "darkoutbreak"
     ]
 }

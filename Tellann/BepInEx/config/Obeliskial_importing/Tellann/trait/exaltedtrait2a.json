@@ -23,7 +23,7 @@
     "DamageBonusPercentValue": 0.0,
     "DamageBonusPercentValue2": 0.0,
     "DamageBonusPercentValue3": 0.0,
-    "Description": "Zeal +1. Zeal on heroes can stack up to 20, but all charges are lost at the end of turn.",
+    "Description": "Zeal +1. Zeal on heroes can stack up to 20 and increase Shadow Damage by 1 per charge.",
     "HealFlatBonus": 0,
     "HealPercentBonus": 0.0,
     "HealReceivedFlatBonus": 0,

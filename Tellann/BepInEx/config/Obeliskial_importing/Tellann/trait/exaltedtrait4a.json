@@ -23,7 +23,7 @@
     "DamageBonusPercentValue": 0.0,
     "DamageBonusPercentValue2": 0.0,
     "DamageBonusPercentValue3": 0.0,
-    "Description": "Burn +2, Dark +2. When a hero hits a monster with Dark, they heal 1 HP per charge.",
+    "Description": "Burn +2, Dark +2. When a hero hits a monster with Dark, they heal 1 HP per charge and consume 1 charge.",
     "HealFlatBonus": 0,
     "HealPercentBonus": 0.0,
     "HealReceivedFlatBonus": 0,
