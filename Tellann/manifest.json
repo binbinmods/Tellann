@@ -1,10 +1,10 @@
 {
   "name": "Tellann_The_Exalted",
-  "version_number": "0.1.0",
+  "version_number": "1.0.0",
   "website_url": "https://github.com/binbinmods/Tellann",
   "description": "New Hero Mod for Tellann, the Exalted. A new Healer/Mage that specializes in Dark, Fire, and Zeal",
   "dependencies": [
     "meds-Obeliskial_Content-1.5.6",
-    "meds-Obeliskial_Essentials-1.5.0"
+    "meds-Obeliskial_Essentials-1.5.2"
   ]
 }

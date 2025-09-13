@@ -108,13 +108,13 @@ namespace Tellann
             else if (_trait == trait4b)
             {
                 // trait 4b:
-                // At the start of your turn, reduce the cost of your highest cost card by one for every 30 Burn on you.
+                // At the start of your turn, reduce the cost of your highest cost card by one for every 20 Burn on you.
                 LogDebug($"Handling Trait {traitId}: {traitName}");
                 CardData highestCostCard = GetRandomHighestCostCard(Enums.CardType.None, heroHand);
                 if (highestCostCard != null)
                 {
                     int burnCharges = _character.GetAuraCharges("burn");
-                    int costReduction = burnCharges / 30;
+                    int costReduction = burnCharges / 20;
                     ReduceCardCost(ref highestCostCard, amountToReduce: costReduction);
                 }
             }
@@ -173,9 +173,10 @@ namespace Tellann
                     traitOfInterest = trait2a;
                     if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.Heroes))
                     {
-                        __result.MaxCharges = __result.MaxMadnessCharges = 20;
+                        __result.MaxCharges = __result.MaxMadnessCharges = 10;
                         __result.GainCharges = true;
-                        __result = AtOManager.Instance.GlobalAuraCurseModifyDamage(__result, Enums.DamageType.Shadow, 0, 1, 0); ;
+                        // __result = AtOManager.Instance.GlobalAuraCurseModifyDamage(__result, Enums.DamageType.Shadow, 0, 1, 0); ;
+                        __result.HealDonePercentPerStack = 10;
                     }
 
                     break;
@@ -184,8 +185,11 @@ namespace Tellann
                     if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.ThisHero))
                     {
                         // __result = AtOManager.Instance.GlobalAuraCurseModifyDamage(__result, Enums.DamageType.Shadow, 0, 0.5f, 0); ;
-                        __result.AuraDamageType = Enums.DamageType.Shadow;
-                        __result.AuraDamageIncreasedPerStack = 0.5f;
+                        // __result.AuraDamageType = Enums.DamageType.Shadow;
+                        // __result.AuraDamageIncreasedPerStack = 0.5f;
+                        __result.IncreasedDamageReceivedType = Enums.DamageType.Shadow;
+                        __result.IncreasedDirectDamageReceivedPerStack = 0.25f;
+
                     }
                     traitOfInterest = trait4b;
                     if (IfCharacterHas(characterOfInterest, CharacterHas.Trait, traitOfInterest, AppliesTo.Heroes))

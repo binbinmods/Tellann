@@ -1,3 +1,11 @@
+# 1.0.0
+
+Initial Release
+
+# 0.1.1
+
+Reworked several traits
+
 # 0.1.0
 
 Initial concept

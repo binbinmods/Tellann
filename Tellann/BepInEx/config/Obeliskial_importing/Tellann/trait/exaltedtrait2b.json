@@ -23,7 +23,7 @@
     "DamageBonusPercentValue": 0.0,
     "DamageBonusPercentValue2": 0.0,
     "DamageBonusPercentValue3": 0.0,
-    "Description": "Burn on you increases Shadow Damage by 0.5 per charge. Dark on enemies increases Fire Damage received by 1 per charge.",
+    "Description": "Burn on enemies increases Shadow Damage received by 0.25 per charge. Dark on enemies increases Fire Damage received by 1 per charge.",
     "HealFlatBonus": 0,
     "HealPercentBonus": 0.0,
     "HealReceivedFlatBonus": 0,

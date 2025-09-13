@@ -6,7 +6,7 @@
 	<Product>Tellann</Product>
     <AssemblyName>com.binbin.Tellann</AssemblyName>
     <Description>Tellann, The Exalted</Description>
-    <Version>0.1.0</Version>
+    <Version>1.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>

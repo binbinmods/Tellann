@@ -1,8 +1,6 @@
 # Tellann, the Exalted
 
-A hero mod, introducing Tellann, a mage/healer who has been trapped in a mental cage. She goes on a journey to break out but has two very different ways of doing so overcoming the issues in a calm and focused way or forcefully breaking out of the cage through sheer will.
-
-This character was designed by @designer.
+A hero mod, introducing Tellann, a corrupted cultist of a mage/healer. He uses his fiery faith to empower his healing and the demise of his foes.
 
 This currently does not include any events or quests related to Tellann other than those available to all heroes or all heroes of a specific class.
 

@@ -23,7 +23,7 @@
     "DamageBonusPercentValue": 0.0,
     "DamageBonusPercentValue2": 0.0,
     "DamageBonusPercentValue3": 0.0,
-    "Description": "Burn on allies no longer reduces resistances. At the start of your turn, for every 30 Burn on you, reduce the cost of your highest cost card by 1 until discarded .",
+    "Description": "Burn on allies no longer reduces resistances. At the start of your turn, reduce the cost of your highest cost card by 1 for every 20 Burn on you until discarded.",
     "HealFlatBonus": 0,
     "HealPercentBonus": 0.0,
     "HealReceivedFlatBonus": 0,

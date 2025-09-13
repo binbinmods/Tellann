@@ -1,5 +1,5 @@
 {
-    "Activation": "CastCard",
+    "Activation": "None",
     "AuraCurseBonus1": "zeal",
     "AuraCurseBonus2": "",
     "AuraCurseBonus3": "",
@@ -23,7 +23,7 @@
     "DamageBonusPercentValue": 0.0,
     "DamageBonusPercentValue2": 0.0,
     "DamageBonusPercentValue3": 0.0,
-    "Description": "Zeal +1. Zeal on heroes can stack up to 20 and increase Shadow Damage by 1 per charge.",
+    "Description": "Zeal +1. Zeal on heroes can stack up to 10 and increases Healing Done by 10% per charge.",
     "HealFlatBonus": 0,
     "HealPercentBonus": 0.0,
     "HealReceivedFlatBonus": 0,
